@@ -1,0 +1,20 @@
+def gradlePublishKey = System.getenv('GRADLE_PUBLISH_KEY')
+if (gradlePublishKey != null)
+	System.setProperty('gradle.publish.key', gradlePublishKey)
+def gradlePublishSecret = System.getenv('GRADLE_PUBLISH_SECRET')
+if (gradlePublishSecret != null)
+	System.setProperty('gradle.publish.secret', gradlePublishSecret)
+
+pluginBundle {
+	website = 'Zoltu'
+	vcsUrl = 'Gradle.Plugin.SimpleGradlePluginPublish'
+
+	plugins {
+		myPlugin {
+			id = 'com.zoltu.SimpleGradlePluginPublish'
+			displayName = 'SimpleGradlePluginPublish'
+			description = 'A simplification of the gradle publish plugin.'
+			tags = ['']
+		}
+	}
+}
