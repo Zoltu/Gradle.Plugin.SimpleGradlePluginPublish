@@ -10,7 +10,7 @@ buildscript {
 
 plugins {
 	id 'com.gradle.plugin-publish' version '0.9.3'
-	id 'com.zoltu.gradle.plugin.git-versioning' version '1.0.9'
+	id 'com.zoltu.git-versioning' version '1.0.12'
 }
 
 apply plugin: 'kotlin'
