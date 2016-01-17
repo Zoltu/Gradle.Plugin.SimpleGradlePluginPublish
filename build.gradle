@@ -1,10 +1,10 @@
 plugins {
-	id 'com.zoltu.git-versioning' version '1.0.12'
+	id 'com.zoltu.git-versioning' version '1.0.13'
+	id 'com.zoltu.simple-gradle-plugin-publisher' version '1.0.3'
 }
 
 apply plugin: 'groovy'
 apply plugin: 'idea'
-apply from: 'publish.gradle'
 
 repositories {
 	jcenter()
@@ -22,3 +22,13 @@ sourceSets.test.java.srcDirs = []
 sourceSets.test.resources.srcDirs = []
 
 group 'com.zoltu'
+
+simpleGradlePluginPublishConfiguration {
+	gradlePublishKey = System.getenv('GRADLE_PUBLISH_KEY')
+	gradlePublishSecret = System.getenv('GRADLE_PUBLISH_SECRET')
+	vcsUrl = 'https://github.com/Zoltu/Gradle.Plugin.SimpleGradlePluginPublish'
+	id = 'com.zoltu.simple-gradle-plugin-publisher'
+	displayName = 'Simple Gradle Plugin Publisher'
+	description = 'A simplification of the gradle publish plugin.'
+	tags = ['publishing', 'plugins', 'simple']
+}
