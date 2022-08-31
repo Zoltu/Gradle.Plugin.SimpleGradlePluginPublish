@@ -13,7 +13,7 @@ repositories {
 
 dependencies {
 	compile(gradleApi())
-	compile(group: 'com.gradle.publish', name: 'plugin-publish-plugin', version: '0.9.3')
+	compile(group: 'com.gradle.publish', name: 'plugin-publish-plugin', version: '1.0.0')
 }
 
 // un-set the java source directories since this is a pure kotlin project
